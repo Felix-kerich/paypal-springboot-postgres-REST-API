@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: paypal-rest-api
+  jackson:
+    property-naming-strategy: SNAKE_CASE  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/your_database_name
+    username: username
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update  
+paypal:
+  client-id: your_paypal_client_id
+  client-secret: your_paypal_client_secret
+  mode: sandbox  # live  for live payments
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+server:
+  port: 8081      
+
